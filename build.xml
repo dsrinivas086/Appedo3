@@ -1,0 +1,29 @@
+<?xml version="1.0" ?> 
+<project name="App2" default="war">
+
+	<path id="compile.classpath">
+		<fileset dir="WebContent/WEB-INF/lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	
+	<target name="clean">
+		<delete dir="temp"/>
+		<mkdir dir="temp/classes"/>
+		<mkdir dir="temp/wars"/>		
+	</target>
+	
+	<target name="compile" depends="clean">
+		<javac destdir="temp/classes" debug="true" srcdir="src" includeantruntime="false">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+	
+	<target name="war" depends="compile">
+		<war destfile="temp/wars/Appedo2.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent"/>
+			<lib dir="WebContent/WEB-INF/lib"/>
+			<classes dir="temp/classes"/>
+		</war>
+	</target>	
+</project>
