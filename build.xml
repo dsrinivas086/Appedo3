@@ -2,11 +2,13 @@
 <project name="App2" default="war">
 
 	<property name="name" value="Appedo2"/>
+	<property name="p1" value="dd-MM-yyyy HH:mm:ss:sss aa zzz"/>
 	<path id="compile.classpath">
 		<fileset dir="WebContent/WEB-INF/lib">
 			<include name="*.jar"/>
 		</fileset>
 	</path>
+	<tstamp> <format property="time" pattern="p1"/> </tstamp>
 	
 	<target name="clean">
 		<delete dir="temp"/>
@@ -21,10 +23,7 @@
 	</target>
 	
 	<target name="war" depends="compile">
-		<tstamp>
-			<format property="TIME" pattern="dd-MM-yyyy HH:mm:ss:sss aa zzz"/>
-		</tstamp>
-		<war destfile="temp/wars/${name}-${TIME}.war" webxml="WebContent/WEB-INF/web.xml">
+		<war destfile="temp/wars/${name}.${time}.war" webxml="WebContent/WEB-INF/web.xml">
 			<fileset dir="WebContent"/>
 			<lib dir="WebContent/WEB-INF/lib"/>
 			<classes dir="temp/classes"/>
