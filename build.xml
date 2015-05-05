@@ -21,8 +21,10 @@
 	</target>
 	
 	<target name="war" depends="compile">
-		<tstamp/>
-		<war destfile="temp/wars/${name}-${TODAY}.war" webxml="WebContent/WEB-INF/web.xml">
+		<tstamp>
+			<format property="TIME" pattern="dd-MM-yyyy HH:mm:ss:sss aa zzz"/>
+		</tstamp>
+		<war destfile="temp/wars/${name}-${TIME}.war" webxml="WebContent/WEB-INF/web.xml">
 			<fileset dir="WebContent"/>
 			<lib dir="WebContent/WEB-INF/lib"/>
 			<classes dir="temp/classes"/>
