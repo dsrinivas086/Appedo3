@@ -21,7 +21,7 @@
 	
 	<target name="war" depends="compile">
 		<tstamp/>
-		<war destfile="temp/wars/${name}-${TODAY}${DSTAMP}${TSTAMP}.war" webxml="WebContent/WEB-INF/web.xml">
+		<war destfile="temp/wars/${name}-${TODAY}${TSTAMP}.war" webxml="WebContent/WEB-INF/web.xml">
 			<fileset dir="WebContent"/>
 			<lib dir="WebContent/WEB-INF/lib"/>
 			<classes dir="temp/classes"/>
