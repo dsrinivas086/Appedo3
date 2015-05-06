@@ -23,7 +23,7 @@
 		<tstamp>
 			<format property="TIME" pattern="dd-MM-yyyy.HH:mm:ss"/>
 		</tstamp>
-		<war destfile="temp/wars/${name}-${TODAY}-${TSTAMP}.war" webxml="WebContent/WEB-INF/web.xml">
+		<war destfile="temp/wars/${name}-${TIME}.war" webxml="WebContent/WEB-INF/web.xml">
 			<fileset dir="WebContent"/>
 			<lib dir="WebContent/WEB-INF/lib"/>
 			<classes dir="temp/classes"/>
