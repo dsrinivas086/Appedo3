@@ -21,7 +21,7 @@
 	
 	<target name="war" depends="compile">
 		<tstamp>
-			<format property="TIME" pattern="dd-MM-yyyy.HH:mm:ss"/>
+			<format property="TIME" pattern="_ddMMyyyy_HH:mm:ss"/>
 		</tstamp>
 		<war destfile="temp/wars/${name}-${TIME}.war" webxml="WebContent/WEB-INF/web.xml">
 			<fileset dir="WebContent"/>
