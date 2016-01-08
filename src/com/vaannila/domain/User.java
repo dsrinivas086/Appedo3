@@ -48,6 +48,7 @@ public class User {
 	}
 	public Boolean getMailingList() {
 		return mailingList;
+		System.out.println("Vaannila");
 	}
 	public void setMailingList(Boolean mailingList) {
 		this.mailingList = mailingList;
