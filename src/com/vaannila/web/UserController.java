@@ -12,6 +12,7 @@ public class UserController extends SimpleFormController {
 	private UserService userService;
 
 	public UserController()	{
+		System.out.println("Hi");
 		setCommandClass(User.class);
 		setCommandName("user");
 	}
